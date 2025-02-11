@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     darkModeToggle.addEventListener("click", () => {
         body.classList.toggle("dark-mode");
 
-        // Save preference
         if (body.classList.contains("dark-mode")) {
             localStorage.setItem("dark-mode", "enabled");
             darkModeToggle.textContent = "☀️";
@@ -31,12 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const windowHeight = window.innerHeight;
 
             if (sectionTop < windowHeight - 100) {
-                section.style.opacity = 1;
-                section.style.transform = "translateY(0)";
+                section.classList.add("visible");
             }
         });
     };
 
     window.addEventListener("scroll", revealSection);
-    revealSection(); // Run initially
+    revealSection();
 });

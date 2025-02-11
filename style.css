@@ -1,75 +1,100 @@
-/* Smooth Fade-in Animation */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Reset & Typography */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
 }
 
-/* Apply Fade-in Effect to Sections */
+h1 {
+    font-size: 5vw;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3vw;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Light Mode */
+body {
+    background: #f9f9f9;
+    color: black;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+/* Fullscreen Hero */
+.full-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    color: white;
+}
+
+/* Scroll Button */
+.scroll-btn {
+    font-size: 2rem;
+    text-decoration: none;
+    color: white;
+    animation: bounce 1.5s infinite;
+    margin-top: 20px;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* Content Sections */
 .content-section {
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: 0 auto;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeIn 1s ease-in-out forwards;
+    transition: opacity 1s, transform 1s;
 }
 
-/* Add Delay for Each Section */
-#contextual-statement { animation-delay: 0.2s; }
-#operational-issues { animation-delay: 0.4s; }
-#case-study-1 { animation-delay: 0.6s; }
-#case-study-2 { animation-delay: 0.8s; }
-#case-study-3 { animation-delay: 1s; }
-#future-plans { animation-delay: 1.2s; }
-
-/* Smooth Hover Effects */
-nav ul li a {
-    transition: color 0.3s ease-in-out;
+/* Show sections when scrolled */
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-nav ul li a:hover {
-    color: #ffcc00;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
 }
 
-/* Scale Effect on Hero Section */
-.hero {
-    transition: background 0.5s ease-in-out;
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin-top: 10px;
+    color: white;
+    transition: color 0.3s;
 }
 
-.hero:hover {
-    background: #1f1f1f;
-}
-
-/* Scale Effect on Case Studies */
-.project {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.project:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Button Animation */
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #ffcc00;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Dark Mode Tweaks */
-body.dark-mode .btn {
-    background: #ff9900;
+body.dark-mode #dark-mode-toggle {
+    color: yellow;
 }
