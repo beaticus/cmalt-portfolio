@@ -2,7 +2,20 @@
 body, h1, h2, p, ul {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Light Mode (Default) */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
 /* Navigation */
@@ -13,6 +26,14 @@ header {
     top: 0;
     z-index: 1000;
     padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+}
+
+body.dark-mode header {
+    background: #1f1f1f;
 }
 
 nav ul {
@@ -30,10 +51,29 @@ nav ul li a {
     color: black;
     font-weight: bold;
     padding: 10px;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
     color: #005a9c;
+}
+
+body.dark-mode nav ul li a {
+    color: white;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    margin-right: 20px;
+    transition: color 0.3s;
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: white;
 }
 
 /* Hero Section */
@@ -45,14 +85,11 @@ nav ul li a:hover {
     background: #333;
     color: white;
     text-align: center;
+    transition: background 0.3s;
 }
 
-.hero h1 {
-    font-size: 50px;
-}
-
-.hero p {
-    font-size: 20px;
+body.dark-mode .hero {
+    background: #1a1a1a;
 }
 
 /* Content Sections */
@@ -66,13 +103,8 @@ nav ul li a:hover {
 .content-section h2 {
     font-size: 30px;
     color: #005a9c;
+    margin-bottom: 10px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-    margin-top: 50px;
-}
+body.dark-mode .content-section h2 {
+    color: #ffcc00;
