@@ -1,110 +1,75 @@
-/* Reset Styles */
-body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* Light Mode (Default) */
-body {
-    background-color: #f5f5f5;
-    color: #333;
-    transition: background 0.3s, color 0.3s;
+/* Apply Fade-in Effect to Sections */
+.content-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
+/* Add Delay for Each Section */
+#contextual-statement { animation-delay: 0.2s; }
+#operational-issues { animation-delay: 0.4s; }
+#case-study-1 { animation-delay: 0.6s; }
+#case-study-2 { animation-delay: 0.8s; }
+#case-study-3 { animation-delay: 1s; }
+#future-plans { animation-delay: 1.2s; }
 
-/* Navigation */
-header {
-    background: white;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s;
-}
-
-body.dark-mode header {
-    background: #1f1f1f;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
+/* Smooth Hover Effects */
 nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    padding: 10px;
-    transition: color 0.3s;
+    transition: color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #005a9c;
-}
-
-body.dark-mode nav ul li a {
-    color: white;
-}
-
-/* Dark Mode Toggle Button */
-#dark-mode-toggle {
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    margin-right: 20px;
-    transition: color 0.3s;
-}
-
-body.dark-mode #dark-mode-toggle {
-    color: white;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #333;
-    color: white;
-    text-align: center;
-    transition: background 0.3s;
-}
-
-body.dark-mode .hero {
-    background: #1a1a1a;
-}
-
-/* Content Sections */
-.content-section {
-    padding: 80px 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.content-section h2 {
-    font-size: 30px;
-    color: #005a9c;
-    margin-bottom: 10px;
-}
-
-body.dark-mode .content-section h2 {
     color: #ffcc00;
+}
+
+/* Scale Effect on Hero Section */
+.hero {
+    transition: background 0.5s ease-in-out;
+}
+
+.hero:hover {
+    background: #1f1f1f;
+}
+
+/* Scale Effect on Case Studies */
+.project {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Animation */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Tweaks */
+body.dark-mode .btn {
+    background: #ff9900;
+}

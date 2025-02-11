@@ -21,4 +21,22 @@ document.addEventListener("DOMContentLoaded", () => {
             darkModeToggle.textContent = "🌙";
         }
     });
+
+    // Scroll Animations
+    const sections = document.querySelectorAll(".content-section");
+
+    const revealSection = () => {
+        sections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (sectionTop < windowHeight - 100) {
+                section.style.opacity = 1;
+                section.style.transform = "translateY(0)";
+            }
+        });
+    };
+
+    window.addEventListener("scroll", revealSection);
+    revealSection(); // Run initially
 });
