@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     const darkModeToggle = document.getElementById("dark-mode-toggle");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
     const body = document.body;
 
-    // Check saved preference
+    // Load Dark Mode Preference
     if (localStorage.getItem("dark-mode") === "enabled") {
         body.classList.add("dark-mode");
         darkModeToggle.textContent = "☀️";
@@ -21,20 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Scroll Animations
-    const sections = document.querySelectorAll(".content-section");
-
-    const revealSection = () => {
-        sections.forEach((section) => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (sectionTop < windowHeight - 100) {
-                section.classList.add("visible");
-            }
-        });
-    };
-
-    window.addEventListener("scroll", revealSection);
-    revealSection();
+    // Mobile Menu Toggle
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+    });
 });
