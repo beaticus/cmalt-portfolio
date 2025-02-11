@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CMALT Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -13,25 +14,66 @@
         <h1>My CMALT Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="case-studies.html">Case studies</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#case-studies">Case studies</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <img src="images/profile.jpg" alt="A profile picture of me" class="profile-img">
-            <h2>Welcome!</h2>
-            <p>I am building my CMALT portfolio to showcase my experience and achievements.</p>
-            <a href="about.html" class="btn">Learn More</a>
-        </section>
-    </main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile-img">
+        <h2>Welcome!</h2>
+        <p>I am building my CMALT portfolio to showcase my experience and achievements.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>This is where you introduce yourself and describe your CMALT journey.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects:</p>
+        <ul>
+            <li>Project 1 - <a href="#">View</a></li>
+            <li>Project 2 - <a href="#">View</a></li>
+        </ul>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <img src="images/gallery1.jpg" alt="Gallery Image 1" class="gallery-img">
+            <img src="images/gallery2.jpg" alt="Gallery Image 2" class="gallery-img">
+            <img src="images/gallery3.jpg" alt="Gallery Image 3" class="gallery-img">
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Watch My Video</h2>
+        <video controls>
+            <source src="videos/portfolio.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: your.email@example.com</p>
+    </section>
 
     <footer>
-        <p>&copy; 2025 My Senior CMALT Portfolio | <a href="contact.html">Contact Me</a></p>
+        <p>&copy; 2025 My Senior CMALT Portfolio | <a href="#contact">Contact Me</a></p>
     </footer>
 </body>
 
